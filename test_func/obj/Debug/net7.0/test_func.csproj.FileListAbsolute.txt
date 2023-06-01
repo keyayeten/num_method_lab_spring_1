@@ -1,0 +1,15 @@
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\bin\Debug\net7.0\test_func.exe
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\bin\Debug\net7.0\test_func.deps.json
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\bin\Debug\net7.0\test_func.runtimeconfig.json
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\bin\Debug\net7.0\test_func.dll
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\bin\Debug\net7.0\test_func.pdb
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.csproj.AssemblyReference.cache
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.AssemblyInfoInputs.cache
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.AssemblyInfo.cs
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.dll
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\refint\test_func.dll
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.pdb
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\test_func.genruntimeconfig.cache
+C:\Users\Vladislav\Desktop\dotnet\num_method_lab_spring_1\test_func\obj\Debug\net7.0\ref\test_func.dll
