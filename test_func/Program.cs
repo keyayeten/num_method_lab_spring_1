@@ -45,12 +45,10 @@ class Program
         if (x < 0 || x > 1)
             return 0;
 
-        var c1 = (5 - 2 * Math.Exp((2.0 / Math.Sqrt(3)))) / (3 * (Math.Exp(2.0 / 3) - Math.Exp(2.0 / Math.Sqrt(3))));
-        var c2 = (2 * Math.Exp(2.0 / Math.Sqrt(3)) - 8) / (3 * (Math.Exp(2.0 / 3) - Math.Exp(2.0 / Math.Sqrt(3))));
-        var c3 = (2 * Math.Exp(2.0 / 3) - 4 * Math.Exp(1.0 / Math.Sqrt(3)) + Math.Exp(-1.0 / Math.Sqrt(3))) /
-                 (2 * (Math.Exp(2.0 / 3) - Math.Exp(2.0 / Math.Sqrt(3))));
-        var c4 = (4 - 2 * Math.Exp(1.0 / Math.Sqrt(3)) - Math.Exp(-1.0 / Math.Sqrt(3))) /
-                 (2 * (Math.Exp(2.0 / 3) - Math.Exp(2.0 / Math.Sqrt(3))));
+        var c1 = 0.365910611;
+        var c2 = -0.427124746;
+        var c3 = 0.75205762;
+        var c4 = 0.309157747;
 
         if (x >= 0 && x <= EPS)
             return c1 * Math.Exp(x / 3) + c2 * Math.Exp(-x / 3);
@@ -74,9 +72,27 @@ class Program
 
     static double GetIntegral(double a, double b, Func<double, double> func)
     {
-        var h = (b - a) / 2;
-        var res = h / 3 * (func(a) + 4 * func(a + h) + func(b));
-        return res;
+    var h = (b - a) / 2;
+    var resPrev = 0.0;
+    var resCurr = h / 3 * (func(a) + 4 * func(a + h) + func(b));
+    var n = 1;
+    while (Math.Abs(resCurr - resPrev) > 0.5e-6)
+{
+    resPrev = resCurr;
+    n *= 2;
+    h /= 2;
+    var sum = 0.0;
+
+    for (var i = 0; i < n; i++)
+    {
+        var x = a + (2 * i + 1) * h;
+        sum += func(x);
+    }
+
+    resCurr = h / 3 * (func(a) + 4 * sum + 2 * resPrev - func(b));
+    }
+
+    return resCurr;
     }
 
     static List<double> GetSolution(int n, Func<double, double> k, Func<double, double> q, Func<double, double> f,
@@ -177,8 +193,8 @@ static Tuple<List<double>, List<double>, List<double>, List<double>> Task(int n,
 
 static void Test(int n)
 {
-    const double border1 = 1;
-    const double border2 = 0;
+    const double border1 = 0;
+    const double border2 = 1;
 
     var res = Task(n, k_test, q_test, f_test, border1, border2);
     var u = GetTestTaskSolution(n);
@@ -198,6 +214,6 @@ static void Test(int n)
 
 static void Main()
 {
-    Test(10);
+    Test(5);
 }
 }

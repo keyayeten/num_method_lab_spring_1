@@ -16,6 +16,7 @@ ALGORITHMS_PATH = {
 
 
 def graphic_task(mode: str = 'test'):
+    """Отображение результатов вычислений."""
     results = []
     with open(RESULTS_PATH[mode], 'r') as f:
         while True:
@@ -30,12 +31,15 @@ def graphic_task(mode: str = 'test'):
                                         'V2(x2i)', 'V(xi) - V2(x2i)'])
     print(df)
 
-    sns.regplot(data=df, x='Xi', y='V(xi)')
-    sns.regplot(data=df, x='Xi', y='V2(x2i)')
+    sns.lineplot(data=df, x='Xi', y='V(xi)')
+    sns.lineplot(data=df, x='Xi', y='V2(x2i)')
+    plt.show()
+    sns.lineplot(data=df, x='Xi', y='V(xi) - V2(x2i)')
     plt.show()
 
 
 def create_results(mode: str = 'test'):
+    """Точка входа в программы, выполнение кода на шарпе."""
     command = f"{ALGORITHMS_PATH[mode]}"
     os.system(command)
 

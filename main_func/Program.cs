@@ -147,10 +147,18 @@ namespace ConsoleApp {
 
     static void Main(string[] args)
     {
-        int n = 50;
-        double border1 = 1.0;
-        double border2 = 0.0;
+        int n = 100;
+        double border1 = 0;
+        double border2 = 1.0;
         var result = Task(n, K, Q, F, border1, border2);
+
+        double[] e = new double[n + 1];
+        for (int i = 0; i < n + 1; i++)
+        {
+            e[i] = Math.Abs(result.Item2[i] - result.Item3[2 * i]);
+        }
+
+        double max_e = e.Max();
 
         using (System.IO.StreamWriter file =
             new System.IO.StreamWriter("main.txt"))
@@ -160,6 +168,7 @@ namespace ConsoleApp {
             {
                 file.WriteLine(string.Format("{0}, {1}, {2}, {3}, {4}", i, result.Item1[i], result.Item2[i], result.Item3[2 * i], result.Item4[i]));
             }
+            Console.WriteLine(string.Format("Max e: {0}", max_e));
         }
     }
 }
